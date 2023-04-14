@@ -1,3 +1,3 @@
 location       = "northeurope"
-prefix         = "Docker2"
-admin_username = "adminusername"
+prefix         = "Docker"
+admin_username = "admin"

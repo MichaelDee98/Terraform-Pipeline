@@ -89,7 +89,7 @@ resource "azurerm_network_security_group" "main" {
 }
 
 
-# Create (and display) an SSH key
+# Create an SSH key
 resource "tls_private_key" "example_ssh" {
   algorithm = "RSA"
   rsa_bits  = 4096
@@ -109,7 +109,7 @@ resource "azurerm_network_interface_security_group_association" "example" {
 }
 
 resource "azurerm_linux_virtual_machine" "main" {
-  name                = "${var.prefix}-team3-ci-vm"
+  name                = "${var.prefix}-team3-vm"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   size                = "Standard_B1s"
