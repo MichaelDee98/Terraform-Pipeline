@@ -1,3 +1,3 @@
 location       = "northeurope"
 prefix         = "Docker"
-admin_username = "admin"
+admin_username = "litsos"
