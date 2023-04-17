@@ -104,7 +104,7 @@ resource "local_file" "inventory" {
   filename        = "./inventory/hosts.ini"
   content = <<EOF
   [docker]
-  ${azurerm_public_ip.main.id}
+  ${azurerm_public_ip.main.ip_address}
   EOF
 }
 
