@@ -105,6 +105,8 @@ resource "local_file" "inventory" {
   content = <<EOF
   [docker]
   ${azurerm_public_ip.main.ip_address}
+  [docker:vars]
+  ansible_user= ${var.admin_username}
   EOF
 }
 
