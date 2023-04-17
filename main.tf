@@ -27,8 +27,6 @@ resource "azurerm_resource_group" "main" {
 
 
 
-
-
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-team3-network"
   address_space       = ["10.0.0.0/16"]
@@ -100,6 +98,14 @@ resource "local_file" "private_key" {
   filename        = "id_rsa"
   file_permission = "0600"
 
+}
+
+resource "local_file" "inventory" {
+  filename        = "./inventory/hosts.ini"
+  content = <<EOF
+  [docker]
+  ${azurerm_public_ip.main.id}
+  EOF
 }
 
 # Connect the security group to the network interface
